@@ -22,12 +22,12 @@ const forFade = ({ current }: StackCardInterpolationProps) => ({
 });
 
 const getActiveRouteName = (state: any): string => {
-  if(!state || !state.routes) {
+  if (!state || !state.routes) {
     return '';
   }
   const route = state.routes[state.index];
 
-  if(route.state) {
+  if (route.state) {
     return getActiveRouteName(route.state);
   }
 
@@ -89,7 +89,7 @@ function ChooseLoginNavigator() {
 }
 
 function switchingAuthStatus(status: UiContext.Status) {
-  switch(status) {
+  switch (status) {
     case UiContext.Status.UN_AUTHORIZED:
       return <Stack.Screen name={CHOOSE_LOGIN} component={ChooseLoginNavigator} />;
     case UiContext.Status.AUTHORIZED:
@@ -104,12 +104,13 @@ function AuthWithRoutes() {
   const uiContext = React.useContext(UiContext.Context);
   return (
     <Stack.Navigator initialRouteName={LOADING} headerMode="none" screenOptions={{
-      cardStyleInterpolator: forFade}}>
-        {uiContext.applicationState !== UiContext.Status.LOADING ? (
-          switchingAuthStatus(uiContext.applicationState)
-        ) : (
+      cardStyleInterpolator: forFade
+    }}>
+      {uiContext.applicationState !== UiContext.Status.LOADING ? (
+        switchingAuthStatus(uiContext.applicationState)
+      ) : (
           <Stack.Screen name={LOADING} component={Loading} />
-      )}
+        )}
     </Stack.Navigator>
   );
 }

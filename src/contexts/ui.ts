@@ -11,5 +11,5 @@ export function createApplicationInitialState(): Status {
 }
 export const Context = React.createContext({
   applicationState: createApplicationInitialState(),
-  setApplicationState: (_: Status) => {},
+  setApplicationState: (_: Status) => { },
 });

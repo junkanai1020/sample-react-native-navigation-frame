@@ -13,7 +13,7 @@ function StatisticsNavigator() {
         name={STATISTICS}
         component={Statistics}
         options={{
-          headerLeft:() => <HeaderLeft />,
+          headerLeft: () => <HeaderLeft />,
         }}
       />
       <Stack.Screen name={DETAIL} component={Detail} />

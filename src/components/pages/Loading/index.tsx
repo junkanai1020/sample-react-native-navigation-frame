@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function ChangeStateButton(props: { state: UiContext.Status }){
+function ChangeStateButton(props: { state: UiContext.Status }) {
   const { setApplicationState } = React.useContext(UiContext.Context);
   const { state } = props;
   return (

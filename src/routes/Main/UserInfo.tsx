@@ -12,7 +12,7 @@ function UserInfoNavigator() {
         name={USER_INFO}
         component={UserInfo}
         options={{
-          headerLeft:() => <HeaderLeft />,
+          headerLeft: () => <HeaderLeft />,
         }}
       />
     </Stack.Navigator>
